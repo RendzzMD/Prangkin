@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klik di sini Terbaru!</title>
+    <title>Klik Video Terbaru!</title>
     <style>
         body {
             display: flex;
@@ -17,19 +17,43 @@
         img {
             max-width: 100%;
             height: auto;
+            animation: goyang 2s infinite alternate ease-in-out;
         }
-        h1 {
-            color: white;
-            font-size: 24px;
+        @keyframes goyang {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(10px); }
+        }
+        button {
             margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            animation: goyang 2s infinite alternate ease-in-out;
+        }
+        button:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
 <body>
-    <audio autoplay>
-        <source src="https://pomf2.lain.la/f/c2ilyw.mp3" type="audio/mp3">
+    <audio id="audioAuto" autoplay>
+        <source src="https://pomf2.lain.la/f/qs8xgcl7.mp3" type="audio/mp3">
     </audio>
+    
     <img src="https://img12.pixhost.to/images/1005/577385432_imgtmp.jpg" alt="Gambar">
-    <h1>Klik di sini Terbaru!</h1>
+    
+    <button onclick="playAudio()">Klik Video Terbaru</button>
+
+    <script>
+        function playAudio() {
+            let audio = new Audio("https://pomf2.lain.la/f/c2ilyw.mp3");
+            audio.play();
+        }
+    </script>
 </body>
 </html>
